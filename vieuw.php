@@ -5,11 +5,10 @@
     $readTodo = readTodo($pdo,"SELECT task FROM todo WHERE do = 'NO'");
     
     $stmt2 = $pdo -> prepare("UPDATE todo SET do=:do WHERE task = :task");
-    //$stmt3 = $pdo -> prepare("DELETE FROM todo WHERE task = :task");
     $datasave = readTodo($pdo,"SELECT task from todo WHERE do = 'YES'");
 
-    if(isset($_POST['save'])){
-        $req = $_POST;
+    if(isset($_GET['save'])){
+        $req = $_GET;
         foreach($req as $ex){
             if($ex!="save"){
                 $stmt2 -> execute(array(
@@ -25,20 +24,12 @@
         $del = $_POST;
         foreach($del as $key => $value){
             $key = str_replace("_"," ",$key);
-            // echo $key;
-            // $sql = $stmt3 ->execute(array(
-            //     ":task" => $key
-            // ));
-            // dump($sql);
             dump($key);
             delete($pdo,"task = '$key'");
         }
     }
 
 ?>
-
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -52,7 +43,7 @@
     <h1>TODO LIST</h1>
     <section>
         <h2>Task to do</h2>
-        <form action="index.php" method="post">
+        <form action="index.php" method="get">
             <?php
                         foreach($readTodo as $todo){
                             echo "<input type=checkbox"." name='".$todo['task']."' ".

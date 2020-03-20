@@ -2,14 +2,14 @@
     require 'sqlconnect.php';
 
     $stmt = $pdo -> prepare("INSERT INTO todo(task, do) VALUES(:task, 'NO')");
-
     if(isset($_POST['add'])){
-        $task = $_POST['todo'];
-        
+        $task = trim($_POST['todo']);
+        $sanitized_task = filter_var($task, FILTER_SANITIZE_STRING);
+        if($sanitized_task){
         $sql= $stmt -> execute(array(
-            ":task" => $task
+            ":task" => $sanitized_task
         ));
-        header('location:index.php');
+        }
     }
     
 ?>
