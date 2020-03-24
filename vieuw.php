@@ -5,7 +5,7 @@
     $readTodo = readTodo($pdo,"SELECT task FROM todo WHERE do = 'NO'");
     $readTodoSort = readTodo($pdo,"SELECT task FROM todo WHERE do = 'NO' ORDER BY task ASC ");
     $stmt2 = $pdo -> prepare("UPDATE todo SET do=:do WHERE task = :task");
-    $datasave = readTodo($pdo,"SELECT task from todo WHERE do = 'YES'");
+    $dataSave = readTodo($pdo,"SELECT task from todo WHERE do = 'YES'");
 
     if(isset($_GET['save'])){
         $req = $_GET;
@@ -47,23 +47,9 @@
         <form action="index.php" method="get">
             <?php
             if(isset($_GET['sort'])){
-                echo '<ul id= list>';
-                        foreach($readTodoSort as $todo){
-                            echo "<li><input type=checkbox"." name='".$todo['task']."' ".
-                            "id='".$todo['task']."' "."value='".$todo['task']."'".">";
-                            echo "<label id ='label".$todo['task']."' "."
-                             for='".$todo['task']."' ".">".$todo['task']."</label></li>";
-                        }
-                echo "</ul>";
+                vieuwListDo($readTodoSort);
             }else{
-                echo '<ul id= list>';
-                        foreach($readTodo as $todo){
-                            echo "<li><input type=checkbox"." name='".$todo['task']."' ".
-                            "id='".$todo['task']."' "."value='".$todo['task']."'".">";
-                            echo "<label id ='label".$todo['task']."' "."
-                             for='".$todo['task']."' ".">".$todo['task']."</label></li>";
-                        }
-                echo "</ul>";
+                vieuwListDo($readTodo);
             }
             ?>
         <input type="submit" name="save"  id="save" value="save">
@@ -77,12 +63,7 @@
             
                         <?php
                         
-                            foreach($datasave as $done){
-                                echo "<input type=submit name='".$done['task']."'"." value=X>";
-                                echo "<input type=checkbox"." name='".$done['task']."' ".
-                                " id='"."do_".$done['task']."' "."checked "."disabled "."value='".$done['task']."'".">";
-                                echo "<label for= do_".$done['task'].">".$done['task']."</label><br>";
-                            }
+                            vieuwListDone($dataSave)
                        
                         ?>
             </form>
