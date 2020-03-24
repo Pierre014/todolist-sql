@@ -50,7 +50,39 @@
         
         sortable( document.getElementById('list'), function (item){});
     
-        //fetch
-        
+        // fonction search
+        function searchElement(table){
+            const recup = [];
+                let word = document.getElementById('search').value;
+                table.forEach(tab=>{
+                    if(tab == word){
+                        recup.push(word);
+                    }
+                })
+            return recup;
+        }
+
+        function recupWord(table){
+            const take = [];
+            table.forEach(tab =>{
+                take.push(tab.textContent);
+            })
+            return take;
+        }
+
+
+
+        //execution
+        document.getElementById('search').addEventListener('search',(arraySearch)=>{
+
+           let li = Array.from(document.getElementsByTagName('li'));
+           arraySearch = recupWord(li);
+           const words =  searchElement(arraySearch);
+
+           words.forEach(word =>{
+               check = document.getElementById(`label${word}`).style.backgroundColor ='red';
+           })
+        });
+
 
 })()

@@ -16,13 +16,13 @@
 
 <form action="index.php" method="post">
 
-    <textarea name="todo" id="todo" row="5" col="10" placeholder="type your task here"></textarea><br>
+    <textarea name="todo" id="todo"  placeholder="type your task here"></textarea><br>
     <input type="submit" name="add" id="add" value="add">
 
 </form>
 
 
-
+<input type="search" name="search" id="search" placeholder="search words">
 
 
 <script src="script.js"></script>

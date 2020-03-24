@@ -8,6 +8,9 @@ body{
     color:rgba(26, 20, 20, 0.525);
 
 }
+#done input{
+    margin-left: 3%;
+}
 h1,h2{
     text-align: center;
 }
@@ -17,4 +20,11 @@ form{
 }
 ul{
     list-style-type: none;
+}
+#search{
+    margin-left: 43%;
+    margin-top: 2%;
+}
+#save{
+    margin-left: 12%;
 }

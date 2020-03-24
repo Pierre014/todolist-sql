@@ -39,9 +39,9 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>Todo-List</title>
 </head>
-<body class="bg-blue-700">
+<body>
     <h1>TODO LIST</h1>
-    <section>
+    <section class="section">
         <h2>Task to do</h2>
         <form action="index.php" method="get">
             <?php
@@ -49,26 +49,28 @@
                         foreach($readTodo as $todo){
                             echo "<li><input type=checkbox"." name='".$todo['task']."' ".
                             "id='".$todo['task']."' "."value='".$todo['task']."'".">";
-                            echo "<label for=".$todo['task'].">".$todo['task']."</label></li>";
+                            echo "<label id = label".$todo['task']." 
+                             for=".$todo['task'].">".$todo['task']."</label></li>";
                         }
                 echo "</ul>";
             ?>
         <input type="submit" name="save"  id="save" value="save">
-    </section>
         </form>
-    <section id ="done">
+    </section>
+
+    <section class="section" id ="done">
             <h2>Task already do</h2>
             <form action="index.php" method="post">
             
                         <?php
-                        echo "<ul>";
+                        
                             foreach($datasave as $done){
-                                echo "<input type=submit name='".$done['task']."'"."value=X>";
-                                echo "<input type=checkbox"." name='".$done['task']."'".
-                                "id='"."do_".$done['task']."'"."checked "."disabled "."value='".$done['task']."'".">";
-                                echo "<label for=".$done['task'].">".$done['task']."</label><br>";
+                                echo "<input type=submit name='".$done['task']."'"." value=X>";
+                                echo "<input type=checkbox"." name='".$done['task']."' ".
+                                " id='"."do_".$done['task']."' "."checked "."disabled "."value='".$done['task']."'".">";
+                                echo "<label for= do_".$done['task'].">".$done['task']."</label><br>";
                             }
-                        echo "</ul>";
+                       
                         ?>
             </form>
     </section>
