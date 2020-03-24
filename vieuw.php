@@ -3,7 +3,7 @@
     
 
     $readTodo = readTodo($pdo,"SELECT task FROM todo WHERE do = 'NO'");
-    
+    $readTodoSort = readTodo($pdo,"SELECT task FROM todo WHERE do = 'NO' ORDER BY task ASC ");
     $stmt2 = $pdo -> prepare("UPDATE todo SET do=:do WHERE task = :task");
     $datasave = readTodo($pdo,"SELECT task from todo WHERE do = 'YES'");
 
@@ -32,6 +32,7 @@
 ?>
 
 <!DOCTYPE html>
+<!--created by Pierre Lorand-->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -45,6 +46,16 @@
         <h2>Task to do</h2>
         <form action="index.php" method="get">
             <?php
+            if(isset($_GET['sort'])){
+                echo '<ul id= list>';
+                        foreach($readTodoSort as $todo){
+                            echo "<li><input type=checkbox"." name='".$todo['task']."' ".
+                            "id='".$todo['task']."' "."value='".$todo['task']."'".">";
+                            echo "<label id ='label".$todo['task']."' "."
+                             for='".$todo['task']."' ".">".$todo['task']."</label></li>";
+                        }
+                echo "</ul>";
+            }else{
                 echo '<ul id= list>';
                         foreach($readTodo as $todo){
                             echo "<li><input type=checkbox"." name='".$todo['task']."' ".
@@ -53,8 +64,10 @@
                              for='".$todo['task']."' ".">".$todo['task']."</label></li>";
                         }
                 echo "</ul>";
+            }
             ?>
         <input type="submit" name="save"  id="save" value="save">
+        <input type="submit" name='sort' id= 'sort' value='sort'>
         </form>
     </section>
 
