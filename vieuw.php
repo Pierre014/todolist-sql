@@ -49,8 +49,8 @@
                         foreach($readTodo as $todo){
                             echo "<li><input type=checkbox"." name='".$todo['task']."' ".
                             "id='".$todo['task']."' "."value='".$todo['task']."'".">";
-                            echo "<label id = label".$todo['task']." 
-                             for=".$todo['task'].">".$todo['task']."</label></li>";
+                            echo "<label id ='label".$todo['task']."' "."
+                             for='".$todo['task']."' ".">".$todo['task']."</label></li>";
                         }
                 echo "</ul>";
             ?>
