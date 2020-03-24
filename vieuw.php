@@ -39,18 +39,19 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>Todo-List</title>
 </head>
-<body>
+<body class="bg-blue-700">
     <h1>TODO LIST</h1>
     <section>
         <h2>Task to do</h2>
         <form action="index.php" method="get">
             <?php
+                echo '<ul id= list>';
                         foreach($readTodo as $todo){
-                            echo "<input type=checkbox"." name='".$todo['task']."' ".
+                            echo "<li><input type=checkbox"." name='".$todo['task']."' ".
                             "id='".$todo['task']."' "."value='".$todo['task']."'".">";
-                            echo "<label for=".$todo['task'].">".$todo['task']."</label><br>";
+                            echo "<label for=".$todo['task'].">".$todo['task']."</label></li>";
                         }
-                    
+                echo "</ul>";
             ?>
         <input type="submit" name="save"  id="save" value="save">
     </section>
@@ -60,13 +61,14 @@
             <form action="index.php" method="post">
             
                         <?php
+                        echo "<ul>";
                             foreach($datasave as $done){
                                 echo "<input type=submit name='".$done['task']."'"."value=X>";
                                 echo "<input type=checkbox"." name='".$done['task']."'".
                                 "id='"."do_".$done['task']."'"."checked "."disabled "."value='".$done['task']."'".">";
                                 echo "<label for=".$done['task'].">".$done['task']."</label><br>";
                             }
-                        
+                        echo "</ul>";
                         ?>
             </form>
     </section>
