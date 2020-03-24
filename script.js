@@ -74,7 +74,7 @@
 
         //execution
         document.getElementById('search').addEventListener('search',(arraySearch)=>{
-
+           
            let li = Array.from(document.getElementsByTagName('li'));
            arraySearch = recupWord(li);
            const words =  searchElement(arraySearch);
