@@ -1,0 +1,20 @@
+{
+  "name": "todolist-sql",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pierre014/todolist-sql.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Pierre014/todolist-sql/issues"
+  },
+  "homepage": "https://github.com/Pierre014/todolist-sql#readme"
+}

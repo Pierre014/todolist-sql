@@ -18,14 +18,14 @@
 <form action="index.php" method="post">
 
     <textarea name="todo" id="todo"  placeholder="type your task here"></textarea><br>
-    <input type="submit" name="add" id="add" value="add">
+    <input class="button" type="submit" name="add" id="add" value="add">
 
 </form>
 
 
-<input type="search" name="search" id="search" placeholder="search words">
+<input class="button" type="search" name="search" id="search" placeholder="search words">
 
-
+</div>
 <script src="script.js"></script>
 </body>
 </html>

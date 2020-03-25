@@ -38,9 +38,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Liu+Jian+Mao+Cao&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
     <title>Todo-List</title>
 </head>
 <body>
+    <div class="container">
     <h1>TODO LIST</h1>
     <section class="section">
         <h2>Task to do</h2>
@@ -52,8 +55,8 @@
                 vieuwListDo($readTodo);
             }
             ?>
-        <input type="submit" name="save"  id="save" value="save">
-        <input type="submit" name='sort' id= 'sort' value='sort'>
+        <input class="button" type="submit" name="save"  id="save" value="save">
+        <input class="button" type="submit" name='sort' id= 'sort' value='sort'>
         </form>
     </section>
 

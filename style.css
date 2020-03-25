@@ -1,6 +1,20 @@
 body{
     background-color: grey;
-    color:white;
+    color:black;
+    margin: auto;
+    margin-top: 20px;
+    width:40%;
+    font-family: 'Indie Flower', cursive;
+}
+h1,h2{
+    font-family: 'Liu Jian Mao Cao', cursive;
+
+}
+.container{
+    padding-top: 10px;
+    margin: auto;
+    background-color: white;
+    height: 600px;
 }
 #done label{
 
@@ -16,15 +30,22 @@ h1,h2{
 }
 
 form{
-    padding-left: 43%;
+    padding-left: 35%;
 }
 ul{
     list-style-type: none;
 }
 #search{
-    margin-left: 43%;
+    margin-left: 35%;
     margin-top: 2%;
 }
 #save{
-    margin-left: 12%;
+    margin-left: 8%;
+}
+textarea{
+    margin-top: 5%;
+    font-family: 'Indie Flower', cursive;
+}
+input{
+    font-family: 'Indie Flower', cursive;
 }
